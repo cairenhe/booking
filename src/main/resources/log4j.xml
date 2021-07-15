@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}][%t][%p][%X{LOGID}]%m%n" />
+        </layout>
+    </appender>
+
+    <appender name="ALL" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="encoding" value="UTF-8" />
+        <param name="File" value="D:/logs/booking/booking.log" />
+        <param name="DatePattern" value="'.'yyyyMMddHH" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d[%t][%X{LOGID}] [%c{1}] [%p] %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="io.netty" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="ALL" />
+    </logger>
+    <logger name="com.crh.booking" additivity="false">
+        <level value="info" />
+        <appender-ref ref="ALL" />
+    </logger>
+
+</log4j:configuration>
