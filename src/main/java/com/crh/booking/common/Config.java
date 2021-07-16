@@ -3,8 +3,8 @@ package com.crh.booking.common;
 public class Config {
 
     /**登录和预订相关的信息**/
-    public static String loginUserId = "jason1024";
-    public static String loginPassword = "lucky,1024925";
+    public static String loginUserId = "*";
+    public static String loginPassword = "*";
     public static String payPassword = "111111";
 
     /**登录相关的地址**/
